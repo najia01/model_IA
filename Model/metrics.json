@@ -1,0 +1,9 @@
+{
+    "version": "1.0",
+    "f1_score": 0.8464769575645669,
+    "taille_test": 469,
+    "bibliotheques": {
+        "keras": "3.13.2",
+        "joblib": "1.6.0"
+    }
+}

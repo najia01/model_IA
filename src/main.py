@@ -47,3 +47,8 @@ def predict(requete: RequeteTexte):
         "probabilite": float(probabilite),
         "version": version_modele
     }
+    
+# Route 3: Faire vivre votre version
+@app.get("/hello")
+def hello():
+    return {"message": "hello depuis la version deployée sur Azure"}

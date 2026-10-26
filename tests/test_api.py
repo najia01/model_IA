@@ -43,7 +43,3 @@ def test_score_minimum():
     # Exigence que le modèle fasse au moins 80% au test final 
     assert score_f1 >= 0.80, f"Le score {score_f1} est trop bas."
     
-# Test 5 : Faire vivre votre version
-@app.get("/hello")
-def hello():
-    return {"message": "hello depuis la version deployée sur Azure"}

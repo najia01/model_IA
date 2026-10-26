@@ -46,3 +46,22 @@ jobs:
           sleep 5
           # Interroge la route health pour voir si elle répond
           curl http://127.0.0.1:8000/health
+
+  publier:
+    needs: image # Ne démarre que si l'image a été testée avec succès
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Connexion à Azure Container Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ secrets.AZURE_REGISTRY }}
+          username: ${{ secrets.AZURE_USERNAME }}
+          password: ${{ secrets.AZURE_PASSWORD }}
+
+      - name: Construire et Pousser l'image sur Azure
+        run: |
+          docker build -t ${{ secrets.AZURE_REGISTRY }}/classifieur-films:latest .
+          docker push ${{ secrets.AZURE_REGISTRY }}/classifieur-films:latest

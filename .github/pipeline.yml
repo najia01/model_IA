@@ -1,0 +1,48 @@
+name: Mon Robot CI
+
+# Le robot se déclenche à chaque git push
+on: [push]
+
+jobs:
+  # --- PREMIER TRAVAIL : LES TESTS ---
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Installer Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Installer les dépendances
+        run: |
+          pip install -r requirements.txt
+          pip install pytest httpx pyyaml
+
+      - name: Lancer la barrière qualité
+        run: python barriere_qualite.py
+
+      - name: Lancer les tests de l'API
+        run: python -m pytest
+
+  # --- DEUXIÈME TRAVAIL : DOCKER ---
+  image:
+    needs: test # N'accepte de démarrer QUE si le job 'test' a réussi
+    runs-on: ubuntu-latest
+    steps:
+      - name: Récupérer le code
+        uses: actions/checkout@v4
+
+      - name: Construire l'image Docker
+        run: docker build -t classifieur-films .
+
+      - name: Vérifier que l'API démarre
+        run: |
+          # Lance la boîte en arrière-plan (-d)
+          docker run -d -p 8000:8000 --name api-test classifieur-films
+          # Attend 5 secondes que le serveur s'allume
+          sleep 5
+          # Interroge la route health pour voir si elle répond
+          curl http://127.0.0.1:8000/health

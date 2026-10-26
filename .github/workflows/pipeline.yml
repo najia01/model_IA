@@ -48,7 +48,7 @@ jobs:
           curl http://127.0.0.1:8000/health
 
   publier:
-    needs: image # Ne démarre que si l'image a été testée avec succès
+    needs: image
     runs-on: ubuntu-latest
     steps:
       - name: Récupérer le code

@@ -63,5 +63,5 @@ jobs:
 
       - name: Construire et Pousser l'image sur Azure
         run: |
-          docker build -t ${{ secrets.AZURE_REGISTRY }}/classifieur-films:latest .
-          docker push ${{ secrets.AZURE_REGISTRY }}/classifieur-films:latest
+          docker build -t ${{ secrets.AZURE_REGISTRY }}/classifieur-films:${{ github.sha }} .
+          docker push ${{ secrets.AZURE_REGISTRY }}/classifieur-films:${{ github.sha }}

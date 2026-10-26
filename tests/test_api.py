@@ -32,7 +32,7 @@ def test_cas_invalide_refuse():
 # Test 4 : Le modèle atteint un score minimum
 def test_score_minimum():
     # Lecture fichier JSON généré 
-    chemin_metrics = "model/metrics.json"
+    chemin_metrics = "Model/metrics.json"
     assert os.path.exists(chemin_metrics), "Le fichier metrics.json est introuvable."
     
     with open(chemin_metrics, "r", encoding="utf-8") as f:

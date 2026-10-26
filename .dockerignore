@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+*.ipynb
+data/
+tests/
+.pytest_cache/
+.github/

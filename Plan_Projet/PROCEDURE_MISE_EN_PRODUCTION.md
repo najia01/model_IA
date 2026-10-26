@@ -18,7 +18,9 @@
 
 ## 2. Journal des versions
 
-| Date        | Identifiant du commit | Changement                           | Résultat    |
-| :---------- | :-------------------- | :----------------------------------- | :---------- |
-| [À remplir] | [À remplir]           | Déploiement initial de l'application | [À remplir] |
-|             |                       |                                      |             |
+| Date | Identifiant du commit | Changement | Résultat |
+| :--- | :-------------------- | :--------- | :------- |
+
+| 23/10/2026 84c2245 1ere partie ok
+
+| | | | |

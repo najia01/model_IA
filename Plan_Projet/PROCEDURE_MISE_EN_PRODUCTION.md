@@ -18,9 +18,22 @@
 
 ## 2. Journal des versions
 
-| Date | Identifiant du commit | Changement | Résultat |
-| :--- | :-------------------- | :--------- | :------- |
+| Date | Identifiant du commit | Changement | Résultat
 
-| 23/10/2026 84c2245 1ere partie ok
-
-| | | | |
+| **Partie 1 : Développement local et Modélisation** | | | |
+| 23/10/2026 | `b871389` | mon premier commit (Initialisation du projet). | OK |
+| 24/10/2026 | `84c2245` | partie1 (Création API, tests, et Dockerfile). | OK |
+| **Partie 2 : Intégration et Déploiement Continu (CI/CD)** | | | |
+| 25/10/2026 | `9a43c16` | partie 2 API et conteneur Docker. | OK |
+| 25/10/2026 | `438cde8` | Ajout du workflow GitHub Actions. | OK |
+| 26/10/2026 | `b645d83` | Déplacement du fichier pipeline dans le dossier workflows. | OK |
+| 26/10/2026 | `e5badda` | Correction majuscule du dossier Model dans les tests. | OK |
+| 26/10/2026 | `441dfe8` | Test de la barriere qualite (crash test). | OK |
+| 26/10/2026 | `c607a7f` | Restauration du seuil F1. | OK |
+| 26/10/2026 | `fe20fae` | Ajout du job de publication vers Azure. | OK |
+| 26/10/2026 | `794b319` | Ajout du job de publication vers Azure (Correction/Ajustement). | OK |
+| **Partie 3 : Déploiement et Rollback sur Azure** | | | |
+| 27/10/2026 | `f43b586` | Ajout de la route hello. | OK |
+| 27/10/2026 | `0c1f6e0` | Déplacement route hello dans l'API. | OK |
+| 26/10/2026 | `937e495` | Correction tag image docker avec github.sha. | OK |
+| 27/10/2026 | `dd2acc9` | Rollback : retour a la version precedente. | OK |

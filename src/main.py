@@ -49,6 +49,6 @@ def predict(requete: RequeteTexte):
     }
     
 # Route 3: Faire vivre votre version
-@app.get("/hello")
-def hello():
-    return {"message": "hello depuis la version deployée sur Azure"}
+# @app.get("/hello")
+# def hello():
+#     return {"message": "hello depuis la version deployée sur Azure"}
